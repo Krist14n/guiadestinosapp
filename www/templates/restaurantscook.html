@@ -1,0 +1,35 @@
+<ion-view view-title="Restaurantes por Cocina" class="menu-title">
+<div class="bar bar-subheader subheader">
+		<div class="button-bar">
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurants')">
+		  		<a href="#app/restaurants" class="menutabs">Nombre</a>
+			</button>	
+		
+			<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/restaurantscook')">
+				<a href="#app/restaurantscook" class="menutabs">Cocina</a>
+			</button>
+		
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantsplan')">
+				<a href="#app/restaurantsplan" class="menutabs">Plan</a>
+			</button>
+		
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantszone')">
+				<a href="#app/restaurantszone" class="menutabs">Zona</a>
+			</button>
+		</div>
+	</div>
+
+<ion-content class="has-header has-subheader has-footer" on-scroll="scrollList()">
+	<ion-list>
+		<ion-item 
+		href="#" 
+		ng-repeat="restaurant in restaurants | filter:query | orderBy: 'title' " 
+		ng-click="go('/app/restaurantcook/{{restaurant.cook}}')"> 
+			<i class="button-clear button-dark"></i>
+				{{restaurant.name}}
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>
+
+ 

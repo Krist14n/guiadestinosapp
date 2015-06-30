@@ -1,0 +1,143 @@
+[
+	{
+		"id": "1",
+		"name": "Americana",
+		"cook": "ame"
+	},
+	{
+		"id": "2",
+		"name": "Árabe",
+		"cook": "arab"
+	},
+	{
+		"id": "3",
+		"name": "Argentina",
+		"cook": "arg"
+	},
+	{
+		"id": "4",
+		"name": "Baja Californiana",
+		"cook": "bajacal"
+	},
+	{
+		"id": "5",
+		"name": "Brasileña",
+		"cook": "bra"
+	},
+	{
+		"id": "6",
+		"name": "Carnes",
+		"cook": "carnes"
+	},
+	{
+		"id": "7",
+		"name": "China",
+		"cook": "china"
+	},
+		{
+		"id": "8",
+		"name": "Contemporanea",
+		"cook": "contempo"
+	},
+	{
+		"id": "9",
+		"name": "Coreana",
+		"cook": "cor"
+	},
+	{
+		"id": "10",
+		"name": "De autor",
+		"cook": "deautor"
+	},
+	{
+		"id": "11",
+		"name": "Española",
+		"cook": "española"
+
+	},
+	{
+		"id": "12",
+		"name": "Francesa",
+		"cook": "int"
+	},
+	{
+		"id": "13",
+		"name": "Griega",
+		"cook": "griega"
+	},
+	{
+		"id": "14",
+		"name": "Hindú",
+		"cook": "hindu"
+	},
+		{
+		"id": "15",
+		"name": "Internacional",
+		"cook": "int"
+	},
+	{
+		"id": "16",
+		"name": "Italiana",
+		"cook": "ita"
+	},
+	{
+		"id": "17",
+		"name": "Japonesa",
+		"cook": "japonesa"
+	},
+	{
+		"id": "18",
+		"name": "Mediterránea",
+		"cook": "mediterranea"
+	},
+	{
+		"id": "19",
+		"name": "Mexicana",
+		"cook": "mexican"
+	},
+	{
+		"id": "20",
+		"name": "Peruana",
+		"cook": "peruana"
+	},
+	{
+		"id": "21",
+		"name": "Pescados y Mariscos",
+		"cook": "seafood"
+	},
+		{
+		"id": "22",
+		"name": "Polaca",
+		"cook": "pol"
+	},
+	{
+		"id": "23",
+		"name": "Portuguesa",
+		"cook": "portuguesa"
+	},
+	{
+		"id": "24",
+		"name": "Rosticería",
+		"cook": "rosticero"
+	},
+	{
+		"id": "25",
+		"name": "Sándwiches",
+		"cook": "sandwich"
+	},
+	{
+		"id": "26",
+		"name": "Tailandesa",
+		"cook": "tai"
+	},
+	{
+		"id": "27",
+		"name": "Vasco francesa",
+		"cook": "vasfran"
+	},
+	{
+		"id": "28",
+		"name": "Yucateca",
+		"cook": "yuc"
+	}
+]

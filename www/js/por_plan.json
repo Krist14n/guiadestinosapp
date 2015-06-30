@@ -1,0 +1,98 @@
+[
+	{
+		"id": "1",
+		"name": "Ambiente",
+		"plancat": "cool",
+		"icon": "ion-ios-people"
+	},
+	{
+		"id": "2",
+		"name": "Brunch",
+		"plancat": "brunch",
+		"icon": "ion-clock"
+	},
+	{
+		"id": "3",
+		"name": "Chic",
+		"plancat": "chic",
+		"icon": "ion-bowtie"
+	},
+	{
+		"id": "4",
+		"name": "Desayuno",
+		"plancat": "breakfast",
+		"icon": "ion-ios-sunny"
+	},
+	{
+		"id": "5",
+		"name": "Desvelado",
+		"plancat": "sleepless",
+		"icon": "ion-ios-moon"
+	},
+	{
+		"id": "6",
+		"name": "De vinos",
+		"plancat": "wine",
+		"icon": "ion-wineglass"
+	},
+	{
+		"id": "7",
+		"name": "Familiar",
+		"plancat": "fam",
+		"icon": "ion-happy"
+	},
+	{
+		"id": "8",
+		"name": "Musica en vivo / DJ",
+		"plancat": "music",
+		"icon": "ion-ios-musical-notes"
+	},
+	{
+		"id": "9",
+		"name": "Negocios",
+		"plancat": "business",
+		"icon": "ion-ios-briefcase"
+	},
+	{
+		"id": "10",
+		"name": "Pet friendly",
+		"plancat": "pet",
+		"icon": "ion-ios-paw"
+	},
+	{
+		"id": "11",
+		"name": "Pizza / Vino",
+		"plancat": "pizza",
+		"icon": "ion-pizza"
+	},
+	{
+		"id": "12",
+		"name": "Postres",
+		"plancat": "desserts",
+		"icon": "ion-icecream"
+	},
+	{
+		"id": "13",
+		"name": "Románticos / Ocasiones especiales",
+		"plancat": "romantic",
+		"icon": "ion-heart"
+	},
+	{
+		"id": "14",
+		"name": "Solteros",
+		"plancat": "singles",
+		"icon": "ion-person"
+	},
+	{
+		"id": "15",
+		"name": "Terraza",
+		"plancat": "ter",
+		"icon": "ion-ios-cloud"
+	},
+	{
+		"id": "16",
+		"name": "Tomar la copa",
+		"plancat": "takecup",
+		"icon": "ion-android-bar"
+	}
+]

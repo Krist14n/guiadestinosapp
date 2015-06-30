@@ -1,0 +1,83 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar top-bar">
+
+      <ion-nav-back-button style="color:#FFFFFF;">
+      <span style="color:rgb(212,33,53)"></span>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" style="color:white;" menu-toggle="left">
+        
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+
+
+    <ion ion-footer-bar>
+      <div class="bar bar-footer bar-footer-banorte">
+        <button class="button button-clear button-footer-banorte">
+          <img src="img/Banortelogo3.png" style="width:207px; height:22px;" class="logofooter">
+        </button>
+      </div>
+    </ion ion-footer-bar> 
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="menu">
+    <ion-content scroll="false">
+
+      <ion-list>
+        <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+          <img src="img/logomb3.png" style="width:50px; height:41px;margin-top: 10px;" class="logomenu">
+        </ion-item>
+        <a class="button-clear button-menu" style="color:white;" href="#/app/restaurantRecomendacion">
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+               <i class="icon ion-star"></i>
+              La recomendación
+          </ion-item>
+        </a>
+        <a class="button-clear button-menu" style="color:white;" href="#/app/regiones">
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+            <i class="icon ion-fork"></i>
+            Regiones
+          </ion-item>
+        </a>
+        <a class="button-clear button-menu" style="color:white;" href="#/app/restaurantesCercanos" >
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+            <i class="icon ion-location"></i>
+            Restaurantes cercanos
+          </ion-item>
+        </a>
+        <a class="button-clear button-menu" style="color:white;" href="#app/restaurantsbanorte" >
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+            <i class="icon ion-card"></i>
+            Promociones Banorte
+          </ion-item>
+        </a>
+        <a class="button-clear button-menu" style="color:white;"  onclick="window.open('http://www.marcobeteta.com/angry-fooders/quejate/', '_blank', 'location=yes,closebuttoncaption=Atras,toolbarposition=top');return true;" >
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+            <i class="icon ion-person-stalker"></i>
+            Angry fooders
+          </ion-item>
+        </a>
+        <a class="button-clear button-menu" style="color:white;" href="#/app/marcobeteta" >
+          <ion-item nav-clear menu-close class="item item-icon-left item-menu">
+            <i class="icon ion-person"></i>
+            Marco Beteta
+          </ion-item> 
+        </a> 
+      </ion-list>
+    </ion-content>
+    
+    <div class="bar bar-footer bar-footer-menu">
+      <button class="button button-clear button-large button-footer">
+        <img src="img/Banortelogo3.png" style="width:207px; height:22px;" class="logofooter">
+      </button>
+    </div>
+
+  </ion-side-menu>
+</ion-side-menus>

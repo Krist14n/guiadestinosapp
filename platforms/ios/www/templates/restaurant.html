@@ -1,0 +1,87 @@
+<ion-view  view-title="Restaurantes" ng-init="init()">
+
+  <ion-content ng-repeat="r in restaurant" class="has-footer" ng-controller="RestaurantCtrl">
+
+		<div class="list card">
+
+			<div class="item">
+				<h2>{{r.name}}</h2>
+				<p>{{r.title}}</p>
+			</div>
+
+			<div class="item item-body">
+
+				<img class="full-image"  ng-src="./img/fotos_restaurantes/{{r.img}}.jpg">
+				<p>
+				  {{r.review}}
+				</p>
+
+				<h2 class="titles-resta">Calificación</h2>
+					<div class="row">
+						<div class="col">Comida</div>
+						<div class="col">Ambiente</div>
+						<div class="col">Servicio</div>
+					</div>
+					<div class="row">
+						<div  ng-repeat="calif in r.calification track by $index" class="col">{{calif}}</div>
+					</div>
+
+				<h2 class="titles-resta">Ideal Para:</h2>
+				<ul>
+				<p ng-repeat="ideal in r.ideal">
+					<span class="vineta">&#8226;</span> {{ ideal}}
+				</p>
+				</ul>
+				<h2  class="titles-resta">Marco Recomienda:</h2>
+				<p ng-repeat="recom in r.mrecommend">
+					<span class="vineta">&#8226;</span> {{recom}}
+				</p>
+
+				<h2  class="titles-resta">Dirección</h2>	
+
+
+				<div class="angular-google-map-container">
+
+					<map center="[ {{markers.lat}} , {{markers.long}} ]">
+					  <marker
+					      position="[ {{markers.lat}}, {{markers.long}} ]"s
+					      visible="true">
+					  </marker>
+					</map>
+					
+				</div>
+				
+				<p ng-repeat="direccion in r.address">
+					{{direccion.branch}}
+				</p>
+
+				<p ng-repeat="tels in r.address">
+					<a ng-repeat="tel1 in tels.tel" href="tel:{{ tel1}}}"> {{tel1}}<br></a>
+				</p>
+
+				<h2  class="titles-resta">Precio promedio por persona</h2>
+				<p>
+					<a>$ {{r.cost}}</a>
+				</p>
+
+				<h2 ng-show="{{r.promo !== 'null'}}" >Promociones Banorte</h2>
+				<p>
+					<a ng-show ="{{r.promo !== 'null'}}" class="promocion">{{r.promo}}</a>
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+					
+			</div>
+
+		</div>
+
+  </ion-content>
+</ion-view>
+<style type="text/css">
+.top-bar {
+
+	background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(.5,#333333)!important}
+</style>

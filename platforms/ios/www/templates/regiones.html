@@ -1,0 +1,12 @@
+<ion-view view-title="Regiones" class="menu-title" hide-back-button="true">
+	<ion-content class="has-footer lista-restaurantes" has-tabs="true" on-scroll="scrollList()">
+		<ion-list>
+			<ion-item
+			href="#" 
+			ng-repeat="region in regiones | filter:query | orderBy: 'nombre' " 
+			ng-click="go('/app/region/{{region.id}}')"> 
+					{{region.nombre}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

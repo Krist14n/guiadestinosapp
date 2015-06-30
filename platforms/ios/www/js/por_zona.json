@@ -1,0 +1,65 @@
+[
+	{
+		"id": "1",
+		"name": "Anzures/Polanco",
+		"zone": "polanco"
+	},
+	{
+		"id": "2",
+		"name": "Azcapotzalco",
+		"zone": "azcapotzalco"
+	},
+	{
+		"id": "3",
+		"name": "Centro",
+		"zone": "centro"
+	},
+	{
+		"id": "4",
+		"name": "Condesa/Roma/Narvarte",
+		"zone": "roma"
+	},
+	{
+		"id": "5",
+		"name": "Cuahutémoc/Reforma centro/Tabacalera",
+		"zone": "reforma"
+	},
+	{
+		"id": "6",
+		"name": "Interlomas",
+		"zone": "interlomas"
+	},
+	{
+		"id": "7",
+		"name": "Las Lomas",
+		"zone": "lomas"
+	},
+	{
+		"id": "8",
+		"name": "Lindavista",
+		"zone": "lindavista"
+	},
+	{
+		"id": "9",
+		"name": "Nápoles/Del Valle/Florida",
+		"zone": "delvalle"
+	},
+	{
+		"id": "10",
+		"name": "Santa Fé/ Bosques",
+		"zone": "santafe"
+	},
+	{
+		"id": "11",
+		"name": "Satélite/ Atizapan",
+		"zone": "satelite"
+	},
+	{
+		"id": "12",
+		"name": "Sur",
+		"zone": "sur"
+	}
+
+
+	
+]

@@ -1,0 +1,37 @@
+<ion-view view-title="Promociones Banorte" class="menu-title">
+<div class="bar bar-subheader subheader">
+		<div class="button-bar">
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantsbanorte')">
+		  		<a href="#app/restaurantsbanorte" class="menutabs">Nombre</a>
+			</button>	
+		
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantscookbanorte')">
+				<a href="#app/restaurantscookbanorte" class="menutabs">Cocina</a>
+			</button>
+		
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantsplanbanorte')">
+				<a href="#app/restaurantsplanbanorte" class="menutabs">Plan</a>
+			</button>
+		
+			<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/restaurantszonebanorte')">
+				<a href="#app/restaurantszonebanorte" class="menutabs">Zona</a>
+			</button>
+		</div>
+		
+	</div>
+
+<ion-content class="has-header has-subheader has-footer" on-scroll="scrollList()">
+	<ion-list>
+		<ion-item
+		href="#" 
+		ng-repeat="restaurant in restaurants | filter:query | orderBy: 'name'" 
+		ng-click="go('/app/restaurantzonebanorte/{{restaurant.zone}}')"> 
+			<i class="button-clear button-dark"></i>
+				{{restaurant.name}}
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>
+
+
+ 

@@ -1,0 +1,249 @@
+.logomenu{
+	margin-left: 30%;
+    display: block;
+    opacity: 1!important;
+}
+
+.logofooter{
+	display: block;
+    width: 100%;
+}
+
+.button-footer-banorte{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.item-menu{
+	border: none;
+	color: white;
+	padding-bottom: 2px; 
+  	padding-top: 12px; 
+}
+
+.item{
+	background: transparent !important;
+}
+
+.listitem{
+	background: transparent;
+}
+
+.bar-footer-banorte{
+	background-color: #d42135;
+	width: 100%;
+}
+
+.bar-footer-menu{
+	border:none;
+	background: transparent;
+	width: 100%;
+	margin-left: 6%;	
+}
+.menu{
+    background: url('../img/fondomenu.png');
+}
+
+.button-menu{
+	text-decoration: none;
+}
+
+.button-footer{
+	padding-right: 16px!important;
+}
+
+.top-bar{
+	background-color: #d42135;
+	
+}
+
+.menu-title{
+
+	color:white;
+}
+
+.bar .title{
+	color: white;
+}
+
+.buscador-restaurantes{
+	top: 38px;
+	outline: none;
+}
+
+.menu-tabs{
+	margin-bottom: 44px;
+	height: 64px;
+}
+.restaurant-titulo{
+	background-color: transparent;
+}
+
+.logorecomendacion{
+	margin-left: 55%;
+
+}
+
+.vineta{
+color:#d42135;
+}
+
+.angular-google-map-container { 
+
+}
+.lista-restaurantes{
+	display: block;
+	position: absolute;
+	margin-bottom: 10px;
+	margin-top: 41px;
+
+}
+
+.activado{
+	border-bottom-color: #d42135!important;
+	border-bottom-width: 2px!important;
+
+}
+
+.placeholder-icon{
+	color:#d42135!important;
+}
+
+i.ion-search{
+	font-size: 21px;
+}
+i.ion-fork.plan-icon{
+	/*font-size:21px;*/
+	color:#d42135!important;
+}
+
+i.ion-ios-people{
+color:#d42135!important;
+}
+
+i.ion-clock{
+color:#d42135!important;
+}
+
+i.ion-bowtie{
+color:#d42135!important;
+}
+
+i.ion-ios-sunny{
+color:#d42135!important;
+font-size:21px;
+}
+i.ion-ios-moon{
+color:#d42135!important;
+font-size:21px;
+}
+i.ion-wineglass{
+color:#d42135!important;
+}
+i.ion-happy{
+color:#d42135!important;
+}
+i.ion-ios-musical-notes{
+color:#d42135!important;
+}
+i.ion-ios-briefcase{
+color:#d42135!important;
+}
+i.ion-ios-paw{
+color:#d42135!important;
+}
+i.ion-pizza{
+color:#d42135!important;
+}
+i.ion-icecream{
+color:#d42135!important;
+}
+i.ion-heart{
+color:#d42135!important;
+}
+i.ion-person.plan-icon{
+color:#d42135!important;
+}
+i.ion-ios-cloud{
+color:#d42135!important;
+}
+i.ion-android-bar{
+	color:#d42135!important;
+}
+.bar-subheader{
+	 border: 0px !important;
+}
+
+.form-inline{
+	padding: 1px 29px 16px 0px;
+	top: 5px;
+
+}
+
+.label{
+	padding-top: 10px!important;
+}
+
+.menutabs{
+	text-decoration: none;
+	color: #d42135;
+	font-weight: bolder;
+}
+ion-nav-back-button{
+	color: #FFFFFF;
+}
+
+.card, .list-inset{
+	margin: 20px -9px!important;
+}
+map{
+	
+	height: 100%;	
+}
+
+#map{
+	height: 100%;
+}
+.has-map{
+	height: 100%;
+}
+
+.promocion{
+	color:#d42135!important;
+}
+
+.icono{
+
+	font-size: 20px;
+}
+
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+ .center {
+  	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#gmaps {
+    width: 100%;
+    height: 100%;
+}
+.button-bar{
+	height: auto;
+}
+.titles-resta{
+	color:#d42135;
+}
