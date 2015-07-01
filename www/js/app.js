@@ -161,6 +161,33 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
+  //restaurantes por ciudad
+
+  .state('app.restaurantes_ciudad',{
+    url: "/restaurantes_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/restaurantes_ciudad.html",
+        controller: "RestaurantesCiudadCtrl"
+      }
+    }
+  })
+
+   //restaurante individual por ciudad
+
+  .state('app.restaurante_ciudad',{
+    url: "/restaurante_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/restaurante_ciudad.html",
+        controller: "RestauranteCiudadCtrl"
+      }
+    }
+  })
+
+
 
   // todos los restaurantes
 
@@ -412,5 +439,5 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/restaurantRecomendacion');
+  $urlRouterProvider.otherwise('/app/regiones');
 });

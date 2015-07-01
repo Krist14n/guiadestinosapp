@@ -22,6 +22,9 @@
   	padding-top: 12px; 
 }
 
+.bar .button.button-clear{
+	  font-size: 16px!important;
+}
 .item{
 	background: transparent !important;
 }
@@ -31,7 +34,7 @@
 }
 
 .bar-footer-banorte{
-	background-color: #d42135;
+	background-color: #501943;
 	width: 100%;
 }
 
@@ -54,7 +57,7 @@
 }
 
 .top-bar{
-	background-color: #d42135;
+	background-color: #501943;
 	
 }
 
@@ -86,7 +89,7 @@
 }
 
 .vineta{
-color:#d42135;
+color:#501943;
 }
 
 .angular-google-map-container { 
@@ -101,13 +104,13 @@ color:#d42135;
 }
 
 .activado{
-	border-bottom-color: #d42135!important;
+	border-bottom-color: #501943!important;
 	border-bottom-width: 2px!important;
 
 }
 
 .placeholder-icon{
-	color:#d42135!important;
+	color:#501943!important;
 }
 
 i.ion-search{
@@ -115,61 +118,61 @@ i.ion-search{
 }
 i.ion-fork.plan-icon{
 	/*font-size:21px;*/
-	color:#d42135!important;
+	color:#501943!important;
 }
 
 i.ion-ios-people{
-color:#d42135!important;
+color:#501943!important;
 }
 
 i.ion-clock{
-color:#d42135!important;
+color:#501943!important;
 }
 
 i.ion-bowtie{
-color:#d42135!important;
+color:#501943!important;
 }
 
 i.ion-ios-sunny{
-color:#d42135!important;
+color:#501943!important;
 font-size:21px;
 }
 i.ion-ios-moon{
-color:#d42135!important;
+color:#501943!important;
 font-size:21px;
 }
 i.ion-wineglass{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-happy{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-ios-musical-notes{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-ios-briefcase{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-ios-paw{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-pizza{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-icecream{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-heart{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-person.plan-icon{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-ios-cloud{
-color:#d42135!important;
+color:#501943!important;
 }
 i.ion-android-bar{
-	color:#d42135!important;
+	color:#501943!important;
 }
 .bar-subheader{
 	 border: 0px !important;
@@ -187,7 +190,7 @@ i.ion-android-bar{
 
 .menutabs{
 	text-decoration: none;
-	color: #d42135;
+	color: #501943;
 	font-weight: bolder;
 }
 ion-nav-back-button{
@@ -210,7 +213,7 @@ map{
 }
 
 .promocion{
-	color:#d42135!important;
+	color:#501943!important;
 }
 
 .icono{
@@ -245,5 +248,5 @@ map{
 	height: auto;
 }
 .titles-resta{
-	color:#d42135;
+	color:#501943;
 }

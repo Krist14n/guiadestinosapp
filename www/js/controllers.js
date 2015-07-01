@@ -42,6 +42,7 @@ app.run(function($cordovaSplashscreen) {
 
 })
 
+
 //Regiones Controller
 
 .controller('RegionesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
@@ -83,7 +84,7 @@ app.run(function($cordovaSplashscreen) {
 
 })
 
-  //Estados Controller
+//Estados Controller
 
 .controller('EstadosCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
     
@@ -125,7 +126,8 @@ app.run(function($cordovaSplashscreen) {
     $ionicNavBarDelegate.showBackButton(true);
 
 })
-  //Ciudades Controller
+
+//Ciudades Controller
 
 .controller('CiudadesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
     
@@ -167,7 +169,86 @@ app.run(function($cordovaSplashscreen) {
     $ionicNavBarDelegate.showBackButton(true);
 
 })
-  //Restaurant List from .json
+
+//Todos los Restaurantes por ciudad
+.controller('RestaurantesCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+
+  var filter = $stateParams.ciudadId;  
+  $http.get('https://api.guiadestinos.com/api_restaurantes_ciudades/'+filter).then(function(resp){
+      $scope.restaurantes = resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+})
+
+//Restaurante individual por ciudad
+.controller('RestauranteCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+  
+  var filter = $stateParams.ciudadId;  
+  $http.get('https://api.guiadestinos.com/api_restaurante_ciudad/'+filter).then(function(resp){
+      $scope.restaurant= resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 100) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+
+//Restaurant List from .json
 
 .controller('RestaurantsCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
 

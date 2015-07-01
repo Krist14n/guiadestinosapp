@@ -1,0 +1,62 @@
+<ion-view  view-title="Restaurantes" ng-init="init()">
+
+  <ion-content ng-repeat="r in restaurant" class="has-footer" ng-controller="RestaurantCtrl">
+
+		<div class="list card">
+
+			<div class="item">
+				<h2>{{r.nombre}}</h2>
+				<p>{{r.tipo_comida}}</p>
+			</div>
+
+			<div class="item item-body">
+
+
+				<h2  class="titles-resta">Marco Recomienda:</h2>
+				
+
+				<span class="vineta">&#8226;</span> {{r.recomendacion_mb}}
+
+				<h2  class="titles-resta">Dirección</h2>	
+
+
+				<div class="angular-google-map-container">
+
+					<map center="[ {{r.latitud}} , {{r.longitud}} ]">
+					  <marker
+					      position="[ {{r.latitud}}, {{r.longitud}} ]"s
+					      visible="true">
+					  </marker>
+					</map>
+					
+				</div>
+				
+				<p>
+					{{r.direccion}}
+				</p>
+
+				<p>
+					<a href="tel:{{r.telefono}}}"> {{r.telefono}}<br></a>
+				</p>
+
+				<h2 ng-show="{{r.promocion !== '' }}" >Promociones Banorte</h2>
+				<p>
+					<a ng-show ="{{r.promocion !== ''}}" class="promocion">{{r.promocion}}</a>
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+					
+			</div>
+
+		</div>
+
+  </ion-content>
+</ion-view>
+<style type="text/css">
+.top-bar {
+
+	background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(.5,#333333)!important}
+</style>
