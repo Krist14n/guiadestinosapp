@@ -171,16 +171,20 @@ app.run(function($cordovaSplashscreen) {
 })
 
 //Todos los Restaurantes por ciudad
+
 .controller('RestaurantesCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
 
-  var filter = $stateParams.ciudadId;  
+  var filter = $stateParams.ciudadId;
+
   $http.get('https://api.guiadestinos.com/api_restaurantes_ciudades/'+filter).then(function(resp){
       $scope.restaurantes = resp.data;
     },function(err){
       console.log("Error", err);
   })
 
-  $scope.scrollList = function() {
+  $scope.ciudad_id = filter;
+
+    $scope.scrollList = function() {
       var dat = new Date().getTime();
       $scope.lastScrolling = new Date().getTime();
     };
@@ -203,20 +207,24 @@ app.run(function($cordovaSplashscreen) {
 
     $scope.goMenu = function ( path ) {
         $location.path( path );
-   };
+    };
 
     $ionicNavBarDelegate.showBackButton(true);
+
 })
 
 //Restaurante individual por ciudad
+
 .controller('RestauranteCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
   
-  var filter = $stateParams.ciudadId;  
+  var filter = $stateParams.restauranteId;  
   $http.get('https://api.guiadestinos.com/api_restaurante_ciudad/'+filter).then(function(resp){
       $scope.restaurant= resp.data;
+
     },function(err){
       console.log("Error", err);
   })
+
 
   $scope.scrollList = function() {
       var dat = new Date().getTime();
@@ -234,9 +242,8 @@ app.run(function($cordovaSplashscreen) {
     };
 
     $scope.go = function ( path ) {
-      if ($scope.canClickInList()) {
+      
         $location.path( path );
-      }
     };
 
     $scope.goMenu = function ( path ) {
@@ -247,6 +254,169 @@ app.run(function($cordovaSplashscreen) {
 
 })
 
+ // Todos los hoteles por ciudad
+
+.controller('HotelesCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+
+  var filter = $stateParams.ciudadId;
+
+  $http.get('https://api.guiadestinos.com/api_hoteles_ciudades/'+filter).then(function(resp){
+      $scope.hoteles = resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+    $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+    };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+//Hotel individual por ciudad
+
+.controller('HotelCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+  
+  var filter = $stateParams.hotelId;  
+  $http.get('https://api.guiadestinos.com/api_hotel_ciudad/'+filter).then(function(resp){
+      $scope.hotel= resp.data;
+
+    },function(err){
+      console.log("Error", err);
+  })
+
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 100) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      
+        $location.path( path );
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+// Todos los spas por ciudad
+
+.controller('SpasCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+
+  var filter = $stateParams.ciudadId;
+
+  $http.get('https://api.guiadestinos.com/api_spas_ciudades/'+filter).then(function(resp){
+      $scope.spas = resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+    $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+    };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+//Spa individual por ciudad
+
+.controller('SpaCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+  
+  var filter = $stateParams.spaId;  
+  $http.get('https://api.guiadestinos.com/api_spa_ciudad/'+filter).then(function(resp){
+      $scope.spa= resp.data;
+      console.log(resp.data);
+    },function(err){
+      console.log("Error", err);
+  })
+
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 100) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      
+        $location.path( path );
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
 
 //Restaurant List from .json
 
@@ -300,9 +470,6 @@ app.run(function($cordovaSplashscreen) {
     result = $.grep(data, function(e){ return e.id == filter; });
 
     $scope.restaurant = result;
-    
-    lon = result[0].map.longitud;
-    lat = result[0].map.latitud;
 
     $scope.markers = { 
       "long": lon, 

@@ -1,21 +1,25 @@
-<ion-view  view-title="Restaurantes" ng-init="init()">
+<ion-view  view-title="Spas" ng-init="init()">
 
-  <ion-content ng-repeat="r in restaurant" class="has-footer" ng-controller="RestauranteCiudadCtrl">
+  <ion-content ng-repeat="r in spa" class="has-footer" ng-controller="HotelCiudadCtrl">
 
 		<div class="list card">
 
 			<div class="item">
 				<h2>{{r.nombre}}</h2>
-				<p>{{r.tipo_comida}}</p>
+				
 			</div>
 
 			<div class="item item-body">
 
 
-				<h2  class="titles-resta">Marco Recomienda:</h2>
+				<h2  class="titles-resta">Descripción:</h2>
 				
 
-				<span class="vineta">&#8226;</span> {{r.recomendacion_mb}}
+				<span class="vineta">&#8226;</span> {{r.descripcion}}
+
+				<h2  class="titles-resta">Tratamientos:</h2>
+
+				<span class="vineta">&#8226;</span> {{r.tratamientos}}
 
 				<h2  class="titles-resta">Dirección</h2>	
 
@@ -39,6 +43,9 @@
 					<a href="tel:{{r.telefono}}}"> {{r.telefono}}<br></a>
 				</p>
 
+				<p>
+					<a href="http://{{r.web}}">{{r.web}}</a>
+				</p>
 				<h2 ng-show="{{r.promocion !== '' }}" >Promociones Banorte</h2>
 				<p>
 					<a ng-show ="{{r.promocion !== ''}}" class="promocion">{{r.promocion}}</a>

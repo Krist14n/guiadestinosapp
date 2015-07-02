@@ -177,7 +177,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
    //restaurante individual por ciudad
 
   .state('app.restaurante_ciudad',{
-    url: "/restaurante_ciudad/:ciudadId",
+    url: "/restaurante_ciudad/:restauranteId",
     cache: false,
     views : {
       'menuContent' : {
@@ -187,6 +187,57 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
+  //hoteles por ciudad
+
+  .state('app.hoteles_ciudad',{
+    url: "/hoteles_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/hoteles_ciudad.html",
+        controller: "HotelesCiudadCtrl"
+      }
+    }
+  })
+
+  //hotel individual por ciudad
+
+  .state('app.hotel_ciudad',{
+    url: "/hotel_ciudad/:hotelId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/hotel_ciudad.html",
+        controller: "HotelCiudadCtrl"
+      }
+    }
+  })  
+
+//spas por ciudad
+
+  .state('app.spas_ciudad',{
+    url: "/spas_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/spas_ciudad.html",
+        controller: "SpasCiudadCtrl"
+      }
+    }
+  })
+
+  //hotel individual por ciudad
+
+  .state('app.spa_ciudad',{
+    url: "/spa_ciudad/:spaId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/spa_ciudad.html",
+        controller: "SpaCiudadCtrl"
+      }
+    }
+  }) 
 
 
   // todos los restaurantes

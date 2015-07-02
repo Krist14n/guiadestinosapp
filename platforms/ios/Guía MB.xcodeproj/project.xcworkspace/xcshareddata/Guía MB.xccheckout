@@ -7,34 +7,34 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B538B59C-1A2D-4DD0-A04D-5D6ECEA523F2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Guía MB</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C051E2157D9B8C7C3F70A38B16D80721B9914021</key>
-		<string>https://github.com/Krist14n/guiarestaurantesapp.git</string>
+		<key>EA60DEEB27E3F872F32CE7FD121CE614DA877625</key>
+		<string>https://github.com/Krist14n/guiadestinosapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/Guía MB.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/Guía MB.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C051E2157D9B8C7C3F70A38B16D80721B9914021</key>
+		<key>EA60DEEB27E3F872F32CE7FD121CE614DA877625</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Krist14n/guiarestaurantesapp.git</string>
+	<string>https://github.com/Krist14n/guiadestinosapp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C051E2157D9B8C7C3F70A38B16D80721B9914021</string>
+	<string>EA60DEEB27E3F872F32CE7FD121CE614DA877625</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C051E2157D9B8C7C3F70A38B16D80721B9914021</string>
+			<string>EA60DEEB27E3F872F32CE7FD121CE614DA877625</string>
 			<key>IDESourceControlWCCName</key>
-			<string>guiarestaurantesapp</string>
+			<string>guiadestinosapp</string>
 		</dict>
 	</array>
 </dict>

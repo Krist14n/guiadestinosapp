@@ -2,15 +2,15 @@
 <div class="bar bar-subheader subheader">
 		<div class="button-bar">
 
-			<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/restaurantes_ciudad/{{ ciudad_id }}')">
+			<button class="button button-clear button-assertive" ng-click="goMenu('/app/restaurantes_ciudad/{{ ciudad_id }}')">
 		  		<a href="#app/restaurantes_ciudad/{{ ciudad_id }}" class="menutabs">Restaurantes</a>
 			</button>	
 		
-			<button class="button button-clear button-assertive" ng-click="goMenu('/app/hoteles_ciudad/{{ ciudad_id }}')">
+			<button class="button button-clear button-assertive " ng-click="goMenu('/app/hoteles_ciudad/{{ ciudad_id }}')">
 				<a href="#app/hoteles_ciudad/{{ ciudad_id }}" class="menutabs">Hoteles</a>
 			</button>
 		
-			<button class="button button-clear button-assertive" ng-click="goMenu('/app/spas_ciudad/{{ ciudad_id }}')">
+			<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/spas_ciudad/{{ ciudad_id }}')">
 				<a href="#app/spas_ciudad/{{ ciudad_id }}" class="menutabs">Spas</a>
 			</button>
 
@@ -18,7 +18,7 @@
 		<form class="form-inline">
 				<label class=" item-input label">
 					<i class="ion-search placeholder-icon" style="color=#501943;"></i>
-					<input ng-model="query.nombre" type="text" placeholder="Buscar hoteles" autofocus>
+					<input ng-model="query.nombre" type="text" placeholder="Buscar spas" autofocus>
 				</label>
 		</form>
 </div>
@@ -27,9 +27,9 @@
 	<ion-list >
 		<ion-item 
 		href="#"
-		ng-repeat="restaurante in restaurantes | filter:query | orderBy: 'nombre' "  
-		ng-click="go('/app/restaurante_ciudad/{{restaurante.id}}')"> 
-				{{restaurante.nombre}}
+		ng-repeat="spa in spas | filter:query | orderBy: 'nombre' "  
+		ng-click="go('/app/spa_ciudad/{{spa.id}}')"> 
+				{{spa.nombre}}
 		</ion-item>
 	</ion-list>
 </ion-content>
