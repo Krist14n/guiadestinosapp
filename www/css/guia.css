@@ -34,7 +34,7 @@
 }
 
 .bar-footer-banorte{
-	background-color: #501943;
+	background-color: #c12283;
 	width: 100%;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .top-bar{
-	background-color: #501943;
+	background-color: #c12283;
 	
 }
 
@@ -89,7 +89,7 @@
 }
 
 .vineta{
-color:#501943;
+color:#c12283;
 }
 
 .angular-google-map-container { 
@@ -104,13 +104,13 @@ color:#501943;
 }
 
 .activado{
-	border-bottom-color: #501943!important;
+	border-bottom-color: #c12283!important;
 	border-bottom-width: 2px!important;
 
 }
 
 .placeholder-icon{
-	color:#501943!important;
+	color:#c12283!important;
 }
 
 i.ion-search{
@@ -118,61 +118,61 @@ i.ion-search{
 }
 i.ion-fork.plan-icon{
 	/*font-size:21px;*/
-	color:#501943!important;
+	color:#c12283!important;
 }
 
 i.ion-ios-people{
-color:#501943!important;
+color:#c12283!important;
 }
 
 i.ion-clock{
-color:#501943!important;
+color:#c12283!important;
 }
 
 i.ion-bowtie{
-color:#501943!important;
+color:#c12283!important;
 }
 
 i.ion-ios-sunny{
-color:#501943!important;
+color:#c12283!important;
 font-size:21px;
 }
 i.ion-ios-moon{
-color:#501943!important;
+color:#c12283!important;
 font-size:21px;
 }
 i.ion-wineglass{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-happy{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-ios-musical-notes{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-ios-briefcase{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-ios-paw{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-pizza{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-icecream{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-heart{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-person.plan-icon{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-ios-cloud{
-color:#501943!important;
+color:#c12283!important;
 }
 i.ion-android-bar{
-	color:#501943!important;
+	color:#c12283!important;
 }
 .bar-subheader{
 	 border: 0px !important;
@@ -190,7 +190,7 @@ i.ion-android-bar{
 
 .menutabs{
 	text-decoration: none;
-	color: #501943;
+	color: #c12283;
 	font-weight: bolder;
 }
 ion-nav-back-button{
@@ -213,7 +213,7 @@ map{
 }
 
 .promocion{
-	color:#501943!important;
+	color:#c12283!important;
 }
 
 .icono{
@@ -248,5 +248,5 @@ map{
 	height: auto;
 }
 .titles-resta{
-	color:#501943;
+	color:#c12283;
 }

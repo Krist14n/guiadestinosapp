@@ -8,6 +8,24 @@ app.run(function($cordovaSplashscreen) {
   }, 5000)
 })
 
+app.service('ciudadService', function() {
+
+  var ciudadList = [];
+
+  var addCiudad = function(newObj) {
+      ciudadList.push(newObj);
+  };
+
+  var getCiudad = function(){
+      return ciudadList;
+  };
+
+  return {
+    addCiudad: addCiudad,
+    getCiudad: getCiudad
+  };
+
+})
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $location) {
   // Form data for the login modal
@@ -129,12 +147,14 @@ app.run(function($cordovaSplashscreen) {
 
 //Ciudades Controller
 
-.controller('CiudadesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+.controller('CiudadesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location, ciudadService){
     
     var filter = $stateParams.ciudadId;  
 
     $http.get('https://api.guiadestinos.com/api_estados/'+filter).then(function(resp){
       $scope.ciudades = resp.data;
+      ciudadService.addCiudad(resp.data[0]['nombre']);
+
     },function(err){
       console.log("Error", err);
     })
@@ -172,17 +192,19 @@ app.run(function($cordovaSplashscreen) {
 
 //Todos los Restaurantes por ciudad
 
-.controller('RestaurantesCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+.controller('RestaurantesCiudadCtrl', function ($scope , $stateParams, $http, $ionicNavBarDelegate, $location, ciudadService){
 
   var filter = $stateParams.ciudadId;
-
   $http.get('https://api.guiadestinos.com/api_restaurantes_ciudades/'+filter).then(function(resp){
       $scope.restaurantes = resp.data;
+      
     },function(err){
       console.log("Error", err);
   })
 
-  $scope.ciudad_id = filter;
+    $scope.ciudad_id = filter;
+$scope.nombre_ciudad = ciudadService.getCiudad();
+    
 
     $scope.scrollList = function() {
       var dat = new Date().getTime();
@@ -215,7 +237,7 @@ app.run(function($cordovaSplashscreen) {
 
 //Restaurante individual por ciudad
 
-.controller('RestauranteCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+.controller('RestauranteCiudadCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location, ciudadService){
   
   var filter = $stateParams.restauranteId;  
   $http.get('https://api.guiadestinos.com/api_restaurante_ciudad/'+filter).then(function(resp){
@@ -225,6 +247,7 @@ app.run(function($cordovaSplashscreen) {
       console.log("Error", err);
   })
 
+  $scope.titulo = ciudadService.getCiudad();
 
   $scope.scrollList = function() {
       var dat = new Date().getTime();
