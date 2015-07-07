@@ -16,5 +16,8 @@
   },
   "cordovaPlugins": [
     "https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git"
+  ],
+  "cordovaPlatforms": [
+    "ios"
   ]
 }

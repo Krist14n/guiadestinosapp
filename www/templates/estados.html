@@ -2,7 +2,7 @@
 	<ion-content class="has-footer" has-tabs="true" on-scroll="scrollList()">
 		<ion-list>
 			<ion-item
-			href="#" 
+			href="#/app/estado/{{estado.id}}" 
 			ng-repeat="estado in estados | filter:query | orderBy: 'nombre' " 
 			ng-click="go('/app/estado/{{estado.id}}')"> 
 					{{estado.nombre}}
