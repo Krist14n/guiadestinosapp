@@ -1,0 +1,22 @@
+<ion-view view-title="Hoteles" class="menu-title">
+<div class="bar bar-subheader subheader">
+		
+		<form class="form-inline">
+				<label class=" item-input label">
+					<i class="ion-search placeholder-icon" style="color=#501943;"></i>
+					<input ng-model="query.nombre" type="text" placeholder="Buscar hoteles" autofocus>
+				</label>
+		</form>
+</div>
+
+<ion-content class="has-header has-footer lista-restaurantes" on-scroll="scrollList()">
+	<ion-list >
+		<ion-item 
+		
+		ng-repeat="hotel in hoteles | filter:query | orderBy: 'nombre' "  
+		ng-click="go('/app/hotel_ciudad/{{hotel.id}}')" href="#/app/hotel_ciudad/{{hotel.id}}"> 
+				{{hotel.nombre}}
+		</ion-item>
+	</ion-list>
+</ion-content>
+</ion-view>

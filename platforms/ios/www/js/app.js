@@ -135,14 +135,82 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
-  //estados por region
+  //todas las regiones hoteles
+  .state('app.regiones_hotel', {
+    url: "/regiones_hotel",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/regiones_hotel.html",
+        controller: 'RegionesCtrl'
+      }
+    }
+  })
 
+  //todas las regiones restaurante
+  .state('app.regiones_restaurante', {
+    url: "/regiones_restaurante",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/regiones_restaurante.html",
+        controller: 'RegionesCtrl'
+      }
+    }
+  })
+
+  //todas las regiones spa
+  .state('app.regiones_spa', {
+    url: "/regiones_spa",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/regiones_spa.html",
+        controller: 'RegionesCtrl'
+      }
+    }
+  })
+
+  //estados  por region
   .state('app.region', {  
     url: "/region/:estadoId",
     cache: false,
     views: {
       'menuContent':{
         templateUrl: "templates/estados.html",
+        controller: 'EstadosCtrl'
+      }
+    }
+  })
+
+  //estados hotel por region
+  .state('app.region_hotel', {  
+    url: "/region_hotel/:estadoId",
+    cache: false,
+    views: {
+      'menuContent':{
+        templateUrl: "templates/estados_hotel.html",
+        controller: 'EstadosCtrl'
+      }
+    }
+  })
+
+  //estados restaurante por region
+  .state('app.region_restaurante', {  
+    url: "/region_restaurante/:estadoId",
+    cache: false,
+    views: {
+      'menuContent':{
+        templateUrl: "templates/estados_restaurante.html",
+        controller: 'EstadosCtrl'
+      }
+    }
+  })
+
+  //estados spa por region
+  .state('app.region_spa', {  
+    url: "/region_spa/:estadoId",
+    cache: false,
+    views: {
+      'menuContent':{
+        templateUrl: "templates/estados_spa.html",
         controller: 'EstadosCtrl'
       }
     }
@@ -160,6 +228,47 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
       }
     }
   })
+
+  //ciudades por estado hotel
+
+  .state('app.estado_hotel',{
+    url: "/estado_hotel/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent':{
+        templateUrl: "templates/ciudades_hotel.html",
+        controller: "CiudadesHotelCtrl"
+      }
+    }
+  })
+
+  //ciudades por estado restaurante
+
+  .state('app.estado_restaurante',{
+    url: "/estado_restaurante/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent':{
+        templateUrl: "templates/ciudades_restaurante.html",
+        controller: "CiudadesRestauranteCtrl"
+      }
+    }
+  })
+
+  //ciudades por estado spa
+
+  .state('app.estado_spa',{
+    url: "/estado_spa/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent':{
+        templateUrl: "templates/ciudades_spa.html",
+        controller: "CiudadesSpaCtrl"
+      }
+    }
+  })
+
+
 
   //restaurantes por ciudad
 
@@ -187,6 +296,23 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
+
+  //menu restaurantes por ciudad menu
+
+  .state('app.menu_restaurantes_ciudad',{
+    url: "/menu_restaurantes_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/menu_restaurantes_ciudad.html",
+        controller: "RestaurantesCiudadCtrl"
+      }
+    }
+  })
+
+  
+
+
   //hoteles por ciudad
 
   .state('app.hoteles_ciudad',{
@@ -200,6 +326,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
+
   //hotel individual por ciudad
 
   .state('app.hotel_ciudad',{
@@ -211,9 +338,26 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
         controller: "HotelCiudadCtrl"
       }
     }
-  })  
+  }) 
 
-//spas por ciudad
+
+  //menu hoteles por ciudad
+
+  .state('app.menu_hoteles_ciudad',{
+    url: "/menu_hoteles_ciudad/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/menu_hoteles_ciudad.html",
+        controller: "HotelesCiudadCtrl"
+      }
+    }
+  })
+
+
+ 
+
+ //spas por ciudad
 
   .state('app.spas_ciudad',{
     url: "/spas_ciudad/:ciudadId",
@@ -226,7 +370,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
-  //hotel individual por ciudad
+  //spa individual por ciudad
 
   .state('app.spa_ciudad',{
     url: "/spa_ciudad/:spaId",
@@ -237,189 +381,20 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
         controller: "SpaCiudadCtrl"
       }
     }
-  }) 
-
-
-  // todos los restaurantes
-
-  .state('app.restaurants', {
-    url: "/restaurants",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurants.html",
-        controller: 'RestaurantsCtrl'
-      }
-    }
   })
 
-  .state('app.restaurant', {  
-    url: "/restaurant/:restaurantId",
+  //menu spas por ciudad
+
+  .state('app.menu_spas_ciudad',{
+    url: "/menu_spas_ciudad/:ciudadId",
     cache: false,
-    views: {
-      'menuContent':{
-        templateUrl: "templates/restaurant.html",
-        controller: 'RestaurantCtrl'
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/menu_spas_ciudad.html",
+        controller: "SpasCiudadCtrl"
       }
     }
   })
-
-  //por cocina
-
-  .state('app.restaurantscook', {
-    url: "/restaurantscook",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantscook.html",
-        controller: 'RestaurantsByCookCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantcook', {
-    url: "/restaurantcook/:cookId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantscooklist.html",
-        controller: 'RestaurantsListByCookCtrl'
-      }
-    }
-  })
-
-  // por zona
-
-  .state('app.restaurantszone', {
-    url: "/restaurantszone",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantszone.html",
-        controller: 'RestaurantsByZoneCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantzone', {
-    url: "/restaurantzone/:zoneId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantszonelist.html",
-        controller: 'RestaurantsListByZoneCtrl'
-      }
-    }
-  })
-
-  // por plan
-
-  .state('app.restaurantsplan', {
-    url: "/restaurantsplan",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantsplan.html",
-        controller: 'RestaurantsByPlanCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantplan', {
-    url: "/restaurantplan/:planId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantplanlist.html",
-        controller: 'RestaurantsListByPlanCtrl'
-      }
-    }
-  })
-
-  // todos los restaurantes promocion banorte
-
-  .state('app.restaurantsbanorte', {
-    url: "/restaurantsbanorte",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantsbanorte.html",
-        controller: 'RestaurantsBanorteCtrl'
-      }
-    }
-  })
-
-  // todos los restaurantes promocion banorte por cocina
-
-  .state('app.restaurantscookbanorte', {
-    url: "/restaurantscookbanorte",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantscookbanorte.html",
-        controller: 'RestaurantsByCookBanorteCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantcookbanorte', {
-    url: "/restaurantcookbanorte/:cookId",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantscooklistbanorte.html",
-        controller: 'RestaurantsListByCookBanorteCtrl'
-      }
-    }
-  })
-
-
-  // todos los restaurantes promocion banorte por zona
-
-  .state('app.restaurantszonebanorte', {
-    url: "/restaurantszonebanorte",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantszonebanorte.html",
-        controller: 'RestaurantsByZoneBanorteCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantzonebanorte', {
-    url: "/restaurantzonebanorte/:zoneId",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantszonelist.html",
-        controller: 'RestaurantsListByZoneBanorteCtrl'
-      }
-    }
-  })
-
-
-
-  // todos los restaurantes promocion banorte por plan
-
-  .state('app.restaurantsplanbanorte', {
-    url: "/restaurantsplanbanorte",
-    cache: false,
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantsplanbanorte.html",
-        controller: 'RestaurantsByPlanBanorteCtrl'
-      }
-    }
-  })
-
-  .state('app.restaurantplanbanorte', {
-    url: "/restaurantplanbanorte/:planId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/restaurantplanlistbanorte.html",
-        controller: 'RestaurantsListByPlanBanorteCtrl'
-      }
-    }
-  })
-
-
-
 
 
   .state('app.restaurantRecomendacion', {  
@@ -451,34 +426,6 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
-      }
-    }
-  })
-
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  })
-
-
-  .state('app.playlists', {
-    url: "/playlists",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlists.html",
-        controller: 'PlaylistsCtrl'
-      }
-    }
-  })
 
   .state('app.single', {
     url: "/playlists/:playlistId",

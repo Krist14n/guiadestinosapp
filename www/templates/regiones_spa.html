@@ -1,0 +1,12 @@
+<ion-view view-title="Spas" class="menu-title" hide-back-button="true">
+	<ion-content class="has-footer" has-tabs="true" on-scroll="scrollList()">
+		<ion-list>
+			<ion-item
+			href="#/app/region_spa/{{region.id}}" 
+			ng-repeat="region in regiones | filter:query | orderBy: 'nombre' " 
+			ng-click="go('/app/region_spa/{{region.id}}')"> 
+					{{region.nombre}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
