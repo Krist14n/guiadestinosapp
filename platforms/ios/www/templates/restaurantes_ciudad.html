@@ -1,36 +1,31 @@
-<ion-view view-title="Restaurantes" class="menu-title">
-<div class="bar bar-subheader subheader">
-		<div class="button-bar">
+<ion-view view-title="Restaurantes" class="menu-title" >
+	<div class="bar bar-subheader subheader">
 
-			<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/restaurantes_ciudad/{{ ciudad_id }}')">
-		  		<a href="#app/restaurantes_ciudad/{{ ciudad_id }}" class="menutabs">Restaurantes</a>
-			</button>	
-		
-			<button class="button button-clear button-assertive" ng-click="goMenu('/app/hoteles_ciudad/{{ ciudad_id }}')">
-				<a href="#app/hoteles_ciudad/{{ ciudad_id }}" class="menutabs">Hoteles</a>
-			</button>
-		
-			<button class="button button-clear button-assertive" ng-click="goMenu('/app/spas_ciudad/{{ ciudad_id }}')">
-				<a href="#app/spas_ciudad/{{ ciudad_id }}" class="menutabs">Spas</a>
-			</button>
-
-		</div>
-		<form class="form-inline">
-				<label class=" item-input label">
-					<i class="ion-search placeholder-icon" style="color=#501943;"></i>
-					<input ng-model="query.nombre" type="text" placeholder="Buscar hoteles" autofocus>
-				</label>
-		</form>
-</div>
-
-<ion-content class="has-header has-subheader has-footer lista-restaurantes" on-scroll="scrollList()">
-	<ion-list >
-		<ion-item 
-		
-		ng-repeat="restaurante in restaurantes | filter:query | orderBy: 'nombre' "  
-		ng-click="go('/app/restaurante_ciudad/{{restaurante.id}}')" href="#/app/restaurante_ciudad/{{restaurante.id}}"> 
-				{{restaurante.nombre}}
-		</ion-item>
-	</ion-list>
-</ion-content>
+			<div class="button-bar">
+				<button class="button button-clear button-assertive activado" ng-click="goMenu('/app/restaurantes_ciudad/{{ ciudad_id }}')">
+			  		<a ng-href="#app/restaurantes_ciudad/{{ ciudad_id }}" class="menutabs">Restaurantes</a>
+				</button>	
+				<button class="button button-clear button-assertive" ng-click="goMenu('/app/hoteles_ciudad/{{ ciudad_id }}')">
+					<a ng-href="#app/hoteles_ciudad/{{ ciudad_id }}" class="menutabs">Hoteles</a>
+				</button>
+				<button class="button button-clear button-assertive" ng-click="goMenu('/app/spas_ciudad/{{ ciudad_id }}')">
+					<a ng-href="#app/spas_ciudad/{{ ciudad_id }}" class="menutabs">Spas</a>
+				</button>
+			</div>
+			<label class="item-input">
+				<i class="ion-search placeholder-icon" style="color=#501943;"></i>
+				<input ng-model="query.nombre" type="text" placeholder="Buscar restaurantes">
+			</label>
+	</div>
+	<ion-content class="has-header has-subheader has-footer lista-restaurantes"  has-tabs="true" on-scroll="scrollList()">
+		<ion-list>
+			<ion-item 
+			ng-repeat="restaurante in restaurantes | filter:query | orderBy: 'nombre' "  
+			ng-click="go('/app/restaurante_ciudad/{{restaurante.id}}')" href="#/app/restaurante_ciudad/{{restaurante.id}}"> 
+					{{restaurante.nombre}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>
+
+

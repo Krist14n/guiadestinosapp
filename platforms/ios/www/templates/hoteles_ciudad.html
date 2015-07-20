@@ -14,15 +14,13 @@
 				<a href="#app/spas_ciudad/{{ ciudad_id }}" class="menutabs">Spas</a>
 			</button>
 		</div>
-		<form class="form-inline">
-				<label class=" item-input label">
-					<i class="ion-search placeholder-icon" style="color=#501943;"></i>
-					<input ng-model="query.nombre" type="text" placeholder="Buscar hoteles" autofocus>
-				</label>
-		</form>
+		<label class=" item-input label">
+			<i class="ion-search placeholder-icon" style="color=#501943;"></i>
+			<input ng-model="query.nombre" type="text" placeholder="Buscar hoteles">
+		</label>
 </div>
 
-<ion-content class="has-header has-subheader has-footer lista-restaurantes" on-scroll="scrollList()">
+<ion-content class="has-header has-subheader has-footer lista-restaurantes" has-tabs="true" on-scroll="scrollList()">
 	<ion-list >
 		<ion-item 
 		

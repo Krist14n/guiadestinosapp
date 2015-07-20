@@ -39,8 +39,8 @@
 					{{r.direccion}}
 				</p>
 
-				<p>
-					<a href="tel:{{r.telefono}}}"> {{r.telefono}}<br></a>
+				<p ng-repeat="t in tel ">
+					<a ng-repeat="t1 in t track by $index" href="tel:{{t1}}">{{t1}}<br/></a>
 				</p>
 
 				<p>

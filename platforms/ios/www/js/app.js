@@ -24,6 +24,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
         
         // init the map
         function initMap() {
+
             if (map === void 0) {
                 map = new google.maps.Map(element[0], mapOptions);
                 getLocation();
@@ -35,6 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
                     alert("Geolocation is not supported by this browser.");
                   }
                 }
+
                 function showPosition(position) {
                   var lat = position.coords.latitude;
                   var lng = position.coords.longitude;
@@ -50,12 +52,30 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
 
                 // place a marker
                 function setMarker(map, position, title, content) {
+
                     var marker;
+                    var icono;
+                    var parametro = parseInt(title);
+
+                    if ("'1'" == title) {
+                      icono = 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+
+                    }
+                    if ("'2'" == title) {
+                      icono = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+
+                    }
+                    if ("'3'" == title) {
+                      icono = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+
+                    }
+                
+                    
                     var markerOptions = {
                         position: position,
                         map: map,
-                        title: title,
-                        icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                        title: '',
+                        icon: icono
                     };
 
                     marker = new google.maps.Marker(markerOptions);
@@ -75,13 +95,25 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
                     });
                 }
 
-                $http.get('js/guiderest.json').success(function(data){ 
+                $http.get('https://api.guiadestinos.com/api_destinos_ubicacion').success(function(data){ 
 
                 //var markers2 = JSON.search(data, '//*[id]');
 
-                for( var i = 0; i<data.length; i++ ){
-                    setMarker(map, new google.maps.LatLng(data[i].map.latitud, data[i].map.longitud), " ", "<a href='#/app/restaurant/"+data[i].id+"'>"+data[i].name+"</a>");
+                  for( var i = 0; i<data.length; i++ ){
+                    
+                    if (data[i].categoria_id == 1) {
+                      setMarker(map, new google.maps.LatLng(data[i].latitud, data[i].longitud), "'"+data[i].categoria_id +"'", "<a href='#/app/hotel_ciudad/"+data[i].id+"'>"+data[i].nombre+"</a>");
+                    }
+
+                    if (data[i].categoria_id == 2) {
+                      setMarker(map, new google.maps.LatLng(data[i].latitud, data[i].longitud), "'"+data[i].categoria_id +"'", "<a href='#/app/restaurante_ciudad/"+data[i].id+"'>"+data[i].nombre+"</a>");
+                    }
+
+                    if(data[i].categoria_id == 3){
+                      setMarker(map, new google.maps.LatLng(data[i].latitud, data[i].longitud), "'"+data[i].categoria_id+"'" , "<a href='#/app/spa_ciudad/"+data[i].id+"'>"+data[i].nombre+"</a>");
+                    }
                   }
+
                 })
             }
         }     
@@ -122,6 +154,39 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     abstract: true,
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
+  })
+
+
+ //highlights estados
+  .state('app.highlights_estados', {
+    url: "/highlights_estados",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/highlights_estados.html",
+        controller: 'HighlightsEstadosCtrl'
+      }
+    }
+  })
+
+  //highlights ciudades
+  .state('app.highlights_ciudades', {
+    url: "/highlights_ciudades/:estadoId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/highlights_ciudades.html",
+        controller: 'HighlightsCiudadesCtrl'
+      }
+    }
+  })
+  //highlight ciudade
+  .state('app.highlight_ciudad', {
+    url: "/highlight_ciudad/:ciudadId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/highlight_ciudad.html",
+        controller: 'HighlightCiudadCtrl'
+      }
+    }
   })
 
   //todas las regiones
@@ -355,8 +420,6 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
   })
 
 
- 
-
  //spas por ciudad
 
   .state('app.spas_ciudad',{
@@ -396,23 +459,37 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
     }
   })
 
+  //Ciudades con descuento
 
-  .state('app.restaurantRecomendacion', {  
-    url: "/restaurantRecomendacion",
+  .state('app.ciudades_descuentos', {  
+    url: "/ciudades_descuentos",
     views: {
       'menuContent':{
-        templateUrl: "templates/restaurantrecomendacion.html",
-        controller: 'RestaurantRecomendacionCtrl'
+        templateUrl: "templates/ciudades_descuentos.html",
+        controller: 'CiudadesDescuentosCtrl'
       }
     }
   })
 
-  .state('app.restaurantesCercanos',{
-    url: "/restaurantesCercanos",
+  //Restaurantes con descuento
+
+  .state('app.restaurantes_descuentos',{
+    url: "/restaurantes_descuentos/:ciudadId",
+    cache: false,
+    views : {
+      'menuContent' : {
+        templateUrl: "templates/menu_restaurantes_ciudad.html",
+        controller: "RestaurantesDescuentoCtrl"
+      }
+    }
+  })
+
+  .state('app.destinosCercanos',{
+    url: "/destinosCercanos",
     views: {
       'menuContent':{
-        templateUrl: "templates/restaurantescercanos.html",
-        controller: "RestaurantesCercanosCtrl"
+        templateUrl: "templates/destinoscercanos.html",
+        controller: "DestinosCercanosCtrl"
       }
     }
   })
@@ -427,15 +504,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngMap'])
   })
 
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/regiones');
 });

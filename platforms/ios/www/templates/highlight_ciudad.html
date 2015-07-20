@@ -1,0 +1,55 @@
+<ion-view  view-title="Highlights" ng-init="init()">
+
+  <ion-content class="has-footer" ng-controller="HighlightCiudadCtrl">
+
+		<div class="list card">
+
+			
+
+			<div class="item item-body">
+
+				<ul ng-repeat="highlight in highlights">
+        			<li ng-repeat="(key, val) in highlight">
+        				<img class="full-image"   ng-if="key == 'foto' && val != '' " src="https://api.guiadestinos.com/img/{{val}}">
+        			</li>
+    			</ul>
+
+    			<ul ng-repeat="highlight in highlights">
+        			<li ng-repeat="(key, val) in highlight">
+        				<div ng-show = "{{ key == 'descripcion' && val != ''}}">
+        					<p>{{val}}</p>
+        				</div>
+        			</li>
+    			</ul>
+
+    			<ul ng-repeat="highlight in highlights">
+        			<li ng-repeat="(key, val) in highlight">
+        				<div ng-show = "{{ key == 'hightlight_title' && val != '' || key == 'lista_highlights' && val != ''}}">
+        					<p>
+        						<span ng-if = " key == 'hightlight_title' && val != '' " class="vineta">&#8226;</span>
+        							<span>
+        								{{val}}
+        							</span>
+        							
+        					</p>
+
+        				</div>
+        			</li>
+    			</ul>
+
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+					
+			</div>
+
+		</div>
+
+  </ion-content>
+</ion-view>
+<style type="text/css">
+.top-bar {
+background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  to(rgba(80,80,80,0.2)), color-stop(.5,#333333)!important}
+</style>

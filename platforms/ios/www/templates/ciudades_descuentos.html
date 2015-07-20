@@ -1,0 +1,12 @@
+<ion-view view-title="Ciudades" hide-back-button="false">
+	<ion-content class="has-footer" has-tabs="true" on-scroll="scrollList()">
+		<ion-list>
+			<ion-item
+			ng-repeat="ciudad in ciudades | filter:query | orderBy: 'nombre' " 
+			ng-click="go('/app/restaurantes_descuentos/{{ciudad.id}}')"
+			href="#/app/restaurantes_descuentos/{{ciudad.id}}"> 
+					{{ciudad.nombre}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>		

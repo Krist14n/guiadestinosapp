@@ -35,9 +35,11 @@
 					{{r.direccion}}
 				</p>
 
-				<p>
-					<a href="tel:{{r.telefono}}}"> {{r.telefono}}<br></a>
+
+				<p ng-repeat="t in tel ">
+					<a ng-repeat="t1 in t track by $index" href="tel:{{t1}}">{{t1}}<br/></a>
 				</p>
+
 
 				<h2 ng-show="{{r.promocion !== '' }}" >Promociones Banorte</h2>
 				<p>
@@ -55,8 +57,7 @@
 </ion-view>
 <style type="text/css">
 .top-bar {
-
 	background-image: -webkit-gradient(
-  linear, left top, left bottom, from(rgba(50,50,50,0.8)),
-  to(rgba(80,80,80,0.2)), color-stop(.5,#333333)!important}
+  	linear, left top, left bottom, from(rgba(50,50,50,0.8)),
+  	to(rgba(80,80,80,0.2)), color-stop(.5,#333333)!important}
 </style>

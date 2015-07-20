@@ -12,10 +12,6 @@ app.run(function($cordovaSplashscreen) {
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $location) {
   // Form data for the login modal
   $scope.loginData = {};
-
-  $scope.goMenu = function ( path ) {
-        $location.path( path );
-  };
   
 })
 
@@ -42,7 +38,132 @@ app.run(function($cordovaSplashscreen) {
 
 })
 
+//Highlight Estados Controller
 
+.controller('HighlightsEstadosCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+
+    $http.get('https://api.guiadestinos.com/api_highlights_estados').then(function(resp){
+      $scope.estados = resp.data;
+    },function(err){
+      console.log("Error", err);
+    })
+
+    $scope.lastScrolling = new Date().getTime();
+
+    $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(false);
+
+})
+
+//Highlight Ciudades Controller
+
+.controller('HighlightsCiudadesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+    
+    var filter = $stateParams.estadoId;
+    
+    $http.get('https://api.guiadestinos.com/api_highlights_ciudades/'+filter).then(function(resp){
+      $scope.ciudades = resp.data;
+    },function(err){
+      console.log("Error", err);
+    })
+
+    $scope.lastScrolling = new Date().getTime();
+
+    $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+//Highlight Ciudad Controller
+
+.controller('HighlightCiudadCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+    
+    var filter = $stateParams.ciudadId;
+    
+    $http.get('https://api.guiadestinos.com/api_highlight_ciudad/'+filter).then(function(resp){
+      $scope.highlights = resp.data;
+    },function(err){
+      console.log("Error", err);
+    })
+
+    $scope.lastScrolling = new Date().getTime();
+
+    $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 200) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      if ($scope.canClickInList()) {
+        $location.path( path );
+      }
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
 //Regiones Controller
 
 .controller('RegionesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
@@ -492,6 +613,13 @@ app.run(function($cordovaSplashscreen) {
   $http.get('https://api.guiadestinos.com/api_restaurante_ciudad/'+filter).then(function(resp){
       $scope.restaurant= resp.data;
 
+      var telefono = resp.data[0]['telefono'];
+      var array;
+      var json_telefonos = {};
+      array = telefono.split(',') 
+      json_telefonos.telefonos = array;
+      $scope.tel = json_telefonos;
+
     },function(err){
       console.log("Error", err);
   })
@@ -576,6 +704,14 @@ app.run(function($cordovaSplashscreen) {
   $http.get('https://api.guiadestinos.com/api_hotel_ciudad/'+filter).then(function(resp){
       $scope.hotel= resp.data;
 
+      var telefono = resp.data[0]['telefono'];
+      var array;
+     
+      var json_telefonos = {};
+      array = telefono.split(',') 
+      json_telefonos.telefonos = array;
+      $scope.tel = json_telefonos;
+
     },function(err){
       console.log("Error", err);
   })
@@ -659,7 +795,12 @@ app.run(function($cordovaSplashscreen) {
   var filter = $stateParams.spaId;  
   $http.get('https://api.guiadestinos.com/api_spa_ciudad/'+filter).then(function(resp){
       $scope.spa= resp.data;
-      console.log(resp.data);
+      var telefono = resp.data[0]['telefono'];
+      var array;
+      var json_telefonos = {};
+      array = telefono.split(',') 
+      json_telefonos.telefonos = array;
+      $scope.tel = json_telefonos;
     },function(err){
       console.log("Error", err);
   })
@@ -693,9 +834,89 @@ app.run(function($cordovaSplashscreen) {
 
 })
 
+//Ciudades con descuento
 
+.controller('CiudadesDescuentosCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+  
+  $http.get('https://api.guiadestinos.com/api_destinos_ciudades_descuentos').then(function(resp){
+      $scope.ciudades= resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 100) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      
+        $location.path( path );
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
+
+//Restaurantes con descuento
+
+.controller('RestaurantesDescuentoCtrl', function ($scope, $stateParams, $http, $ionicNavBarDelegate, $location){
+  var filter = $stateParams.ciudadId;  
+  $http.get('https://api.guiadestinos.com/api_restaurantes_descuentos/'+filter).then(function(resp){
+      $scope.restaurantes= resp.data;
+    },function(err){
+      console.log("Error", err);
+  })
+
+
+  $scope.scrollList = function() {
+      var dat = new Date().getTime();
+      $scope.lastScrolling = new Date().getTime();
+    };
+
+    $scope.canClickInList = function() {
+      var diff =  new Date().getTime() - $scope.lastScrolling;
+      if (diff > 100) {
+
+          return true;
+      } else {
+          return false;
+      }
+    };
+
+    $scope.go = function ( path ) {
+      
+        $location.path( path );
+    };
+
+    $scope.goMenu = function ( path ) {
+        $location.path( path );
+   };
+
+    $ionicNavBarDelegate.showBackButton(true);
+
+})
 
 .controller('RestaurantesCercanosCtrl', function($scope, $http){
+ 
+})
+
+.controller('DestinosCercanosCtrl', function($scope, $http){
  
 })
 
