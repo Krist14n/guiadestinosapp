@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.fadanelliandco.guiadestinos" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Guía de Destinos</name>
+<widget id="com.fadanelliandco.destinosmb" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Destinos MB</name>
   <description>
-        Guía de Destinos
+        Guía de Destinos MB
     </description>
   <author email="hello@fadanelliandco.com" href="http://fadanelliandco.com">
       Fadanelli&amp;Co.

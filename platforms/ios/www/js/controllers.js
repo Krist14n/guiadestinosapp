@@ -9,10 +9,14 @@ app.run(function($cordovaSplashscreen) {
 })
 
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location, $ionicSideMenuDelegate, $http) {
   // Form data for the login modal
   $scope.loginData = {};
   
+
+  $http.get('js/guiderest.json').success(function(data){ 
+    $ionicSideMenuDelegate.toggleLeft();
+  });
 })
 
 .controller('RestaurantRecomendacionCtrl', function($scope, $http){
@@ -166,7 +170,7 @@ app.run(function($cordovaSplashscreen) {
 })
 //Regiones Controller
 
-.controller('RegionesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location){
+.controller('RegionesCtrl', function($scope , $stateParams, $http, $ionicNavBarDelegate, $location, $ionicSideMenuDelegate){
 
     $http.get('https://api.guiadestinos.com/api_regiones').then(function(resp){
       $scope.regiones = resp.data;
@@ -200,6 +204,7 @@ app.run(function($cordovaSplashscreen) {
     $scope.goMenu = function ( path ) {
         $location.path( path );
    };
+
 
     $ionicNavBarDelegate.showBackButton(false);
 

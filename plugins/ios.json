@@ -61,19 +61,19 @@
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.fadanelliandco.guiadestinos"
+            "PACKAGE_NAME": "com.fadanelliandco.destinosmb"
         },
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.fadanelliandco.guiadestinos"
+            "PACKAGE_NAME": "com.fadanelliandco.destinosmb"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.fadanelliandco.guiadestinos"
+            "PACKAGE_NAME": "com.fadanelliandco.destinosmb"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.fadanelliandco.guiadestinos"
+            "PACKAGE_NAME": "com.fadanelliandco.destinosmb"
         },
         "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "com.fadanelliandco.guiadestinos"
+            "PACKAGE_NAME": "com.fadanelliandco.destinosmb"
         }
     },
     "dependent_plugins": {}

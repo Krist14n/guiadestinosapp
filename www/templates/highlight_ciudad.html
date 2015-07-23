@@ -27,7 +27,7 @@
         				<div ng-show = "{{ key == 'hightlight_title' && val != '' || key == 'lista_highlights' && val != ''}}">
         					<p>
         						<span ng-if = " key == 'hightlight_title' && val != '' " class="vineta">&#8226;</span>
-        							<span>
+        							<span ng-class="{true : 'list_highlight' }[key == 'hightlight_title' && val != '' ]">
         								{{val}}
         							</span>
         							

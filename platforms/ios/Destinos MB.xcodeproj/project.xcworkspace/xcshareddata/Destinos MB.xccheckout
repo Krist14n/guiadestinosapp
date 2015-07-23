@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1F0A948E-A420-4F14-AB27-EFD1996FC66D</string>
+	<string>F8023A5F-AD53-4CBD-B12A-7FBB399F32F9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Guía de Destinos</string>
+	<string>Destinos MB</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EA60DEEB27E3F872F32CE7FD121CE614DA877625</key>
 		<string>https://github.com/Krist14n/guiadestinosapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/Guía de Destinos.xcodeproj</string>
+	<string>platforms/ios/Destinos MB.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EA60DEEB27E3F872F32CE7FD121CE614DA877625</key>
